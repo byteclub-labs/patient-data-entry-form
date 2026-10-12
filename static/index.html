@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patient Data Entry</title>
+  <meta name="description" content="Data entry form for registering a new patient at intake.">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="hero-kicker">New patient intake</p>
+    <h1>Patient Data Entry</h1>
+    <p class="tagline">
+      Collect the details we need to register a new patient.
+      Fields marked <span class="req">*</span> are required.
+    </p>
+  </header>
+
+  <main>
+    <section class="card" id="patient-card">
+      <h2>Patient details</h2>
+      <form id="patient-form" novalidate>
+        <label for="pat-first-name">First name <span class="req">*</span></label>
+        <input id="pat-first-name" name="first_name" type="text" maxlength="120" required autocomplete="given-name">
+        <p class="field-error" data-field="first_name" hidden></p>
+
+        <label for="pat-last-name">Last name <span class="req">*</span></label>
+        <input id="pat-last-name" name="last_name" type="text" maxlength="120" required autocomplete="family-name">
+        <p class="field-error" data-field="last_name" hidden></p>
+
+        <label for="pat-dob">Date of birth <span class="req">*</span></label>
+        <input id="pat-dob" name="date_of_birth" type="date" required autocomplete="bday">
+        <p class="field-error" data-field="date_of_birth" hidden></p>
+
+        <label for="pat-gender">Gender <span class="req">*</span></label>
+        <select id="pat-gender" name="gender" required>
+          <option value="" disabled selected>Select a gender</option>
+          <option>Female</option>
+          <option>Male</option>
+          <option>Other</option>
+          <option>Prefer not to say</option>
+        </select>
+        <p class="field-error" data-field="gender" hidden></p>
+
+        <label for="pat-phone">Phone <span class="req">*</span></label>
+        <input id="pat-phone" name="phone" type="tel" maxlength="40" required autocomplete="tel">
+        <p class="field-error" data-field="phone" hidden></p>
+
+        <label for="pat-email">Email <span class="opt">(optional)</span></label>
+        <input id="pat-email" name="email" type="email" maxlength="254" autocomplete="email">
+        <p class="field-error" data-field="email" hidden></p>
+
+        <label for="pat-street">Street address <span class="opt">(optional)</span></label>
+        <input id="pat-street" name="street_address" type="text" maxlength="240" autocomplete="street-address">
+        <p class="field-error" data-field="street_address" hidden></p>
+
+        <label for="pat-city">City <span class="opt">(optional)</span></label>
+        <input id="pat-city" name="city" type="text" maxlength="120" autocomplete="address-level2">
+        <p class="field-error" data-field="city" hidden></p>
+
+        <label for="pat-state">State/region <span class="opt">(optional)</span></label>
+        <input id="pat-state" name="state_region" type="text" maxlength="120" autocomplete="address-level1">
+        <p class="field-error" data-field="state_region" hidden></p>
+
+        <label for="pat-postal">ZIP/postal code <span class="opt">(optional)</span></label>
+        <input id="pat-postal" name="postal_code" type="text" maxlength="20" autocomplete="postal-code">
+        <p class="field-error" data-field="postal_code" hidden></p>
+
+        <label for="pat-ec-name">Emergency contact name <span class="opt">(optional)</span></label>
+        <input id="pat-ec-name" name="emergency_contact_name" type="text" maxlength="120">
+        <p class="field-error" data-field="emergency_contact_name" hidden></p>
+
+        <label for="pat-ec-phone">Emergency contact phone <span class="opt">(optional)</span></label>
+        <input id="pat-ec-phone" name="emergency_contact_phone" type="tel" maxlength="40">
+        <p class="field-error" data-field="emergency_contact_phone" hidden></p>
+
+        <label for="pat-notes">Notes <span class="opt">(optional)</span></label>
+        <textarea id="pat-notes" name="notes" rows="4" maxlength="500"></textarea>
+        <p class="field-error" data-field="notes" hidden></p>
+
+        <p class="form-error" id="form-error" hidden></p>
+        <p class="form-note" id="form-note" hidden></p>
+        <button type="submit">Save patient</button>
+      </form>
+    </section>
+
+    <section id="patients-section">
+      <h2 id="patients-count">Loading recent patients&hellip;</h2>
+      <div id="patients-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Patient Data Entry &mdash; demo intake form, not for real patient data.</p>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
