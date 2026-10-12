@@ -50,7 +50,7 @@ OUT:
 ### SPEC IN GIT
 - `BRANCH: devin/1791790390-factory-patient-entry`
 - `FILE: docs/specs/patient-data-entry.md`
-- `COMMIT: see branch HEAD (recorded after commit)`
+- `COMMIT: https://github.com/byteclub-labs/patient-data-entry-form/commit/8a220a06de9fb62278b02f8d1ed2f11faa9d8dba`
 
 ### STATUS
 `STATUS: COMPLETE`
